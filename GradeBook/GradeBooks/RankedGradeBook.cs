@@ -11,5 +11,15 @@ namespace GradeBook.GradeBooks
         {
             Type = GradeBookType.Ranked;
         }
+
+        public override char GetLetterGrade(double averageGrade)
+        {
+            if (this.Students.Count < 5)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return 'F';
+        }
     }
 }
